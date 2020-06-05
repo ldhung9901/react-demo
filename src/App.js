@@ -5,10 +5,12 @@ import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import Error from "./pages/Error";
 import SingleRoom from "./pages/SingleRoom";
+import Navbar from "./Component/Navbar"
 function App() {
   return (
     <div className="App">
-      <Router>
+      
+        <Navbar></Navbar>
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -23,7 +25,7 @@ function App() {
             <Error></Error>
           </Route>
         </Switch>
-      </Router>
+      
     </div>
   );
 }
