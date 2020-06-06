@@ -58,13 +58,16 @@ h6 {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
+  color: black;
   background: var(--primaryColor);
   padding: 0.4rem 0.9rem;
   border: 3px solid var(--primaryColor);
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
+  font-weight: 700;
+  align-items: center;
+  padding-top: 0.5rem;
 }
 .btn-primary:hover {
   background: transparent;
@@ -78,7 +81,8 @@ h6 {
 .error {
   text-align: center;
   text-transform: uppercase;
-  margin: 2rem 0;
+  margin: 8rem 0;
+  color: black;
 }
 .empty-search {
   text-align: center;
@@ -235,21 +239,24 @@ h6 {
 .section-title {
   text-align: center;
   margin-bottom: 4rem;
-  color: black;
+  color: white;
+  
 }
 .section-title h4 {
   font-size: 2rem;
   letter-spacing: var(--mainSpacing);
   text-transform: capitalize;
   margin-bottom: 1rem;
-  color: black;
+  color: white;
+  
 }
 .section-title div {
   width: 5rem;
   height: 5px;
   margin: 0 auto;
   background: var(--primaryColor);
-  color: black;
+  color: white;
+  
 }
 /* end of Title */
 
@@ -258,7 +265,7 @@ h6 {
   padding: 5rem 0;
 }
 .services {
-  background-image: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);
+  
   text-align: center;
 }
 .services-center {
@@ -334,11 +341,13 @@ h6 {
 
 .img-container {
   position: relative;
+ 
 }
 .img-container img {
   width: 100%;
   display: block;
   transition: var(--mainTransition);
+  
 }
 .price-top {
   position: absolute;
@@ -378,18 +387,22 @@ h6 {
   transform: translate(-50%, -50%) scale(1);
 }
 .room-info {
-  background: var(--darkGrey);
+  
+  
+  background:rgba(0, 0, 0, 0.7);
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;
-  font-weight: 700;
-  letter-spacing: var(--mainSpacing);
+  font-weight: 500;
+
+ 
 }
 /* end of room  */
 /* single room*/
 
 .single-room {
   padding: 5rem 0 0 0;
+  
 }
 .single-room-images {
   width: 80vw;
@@ -402,12 +415,13 @@ h6 {
 .single-room-images img {
   width: 100%;
   display: block;
+  box-shadow: 0px 0px 5px black;
 }
 .single-room-info {
   width: 80vw;
   display: grid;
   grid-template-columns: 1fr;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 .desc,
 .info {
@@ -428,10 +442,18 @@ h6 {
 
 .info h6 {
   font-weight: 300;
+  
 }
 .room-extras {
   width: 80vw;
   margin: 0 auto 3rem auto;
+}
+
+  
+body {
+
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+ background-blend-mode: lighten;
 }
 .room-extras h6 {
   text-transform: capitalize;
@@ -510,6 +532,12 @@ h6 {
   width: 100%;
   background: transparent;
   font-size: 1rem;
+  color: white;
+  text-transform: capitalize;
+}
+.form-control option {
+  background-color: rgb(58,69,81);
+  text-transform: capitalize;
 }
 .size-inputs {
   display: flex;
