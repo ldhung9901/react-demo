@@ -20,7 +20,6 @@ class RoomProvider extends Component {
   };
   componentDidMount() {
     let rooms = this.formatData(items);
-
     let featuredRooms = rooms.filter((room) => room.featured === true);
     let maxPrice = Math.max(...rooms.map((item) => item.price));
     let minPrice = Math.min(...rooms.map((item) => item.price));
@@ -34,6 +33,7 @@ class RoomProvider extends Component {
       minPrice,
       
     });
+    
   }
   formatData(items) {
     let tempItems = items.map((item) => {
@@ -56,14 +56,16 @@ handleChange = event => {
   const target = event.target
   const value = event.type === 'checkbox' ?target.checked:target.value
   const name = event.target.name
+ 
   this.setState({
-    type:value
+    [name]:value
   },this.filterRooms)
 
 }
 filterRooms = () => {
   let {rooms,type,capacity,price,minSize,maxSize,breakfast,pets}=this.state
-  let tempRooms = [...rooms]
+  
+  let tempRooms = rooms
   if (type !== 'all'){
     tempRooms = tempRooms.filter(room => room.type === type)
   }
@@ -81,13 +83,4 @@ l
   }
 }
 const RoomComsumer = Roomcontext.Consumer;
-export function withRoomConsumer(Component) {
-  return function ConsumerWrapper(props) {
-    return (
-      <RoomComsumer>
-        {(value) => <Component {...props} context={value} />}
-      </RoomComsumer>
-    );
-  };
-}
 export { RoomProvider, RoomComsumer, Roomcontext };

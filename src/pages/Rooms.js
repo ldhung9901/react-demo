@@ -2,7 +2,7 @@ import Hero from "../Component/Hero";
 import React, { Component } from "react";
 import Banner from "../Component/Banner";
 import { Link } from "react-router-dom";
-import RoomContainer from "../Component/RoomContainer";
+import WithRoomConsumer from "../Component/RoomContainer";
 export default class Rooms extends Component {
   render() {
     return (
@@ -14,7 +14,7 @@ export default class Rooms extends Component {
             </Link>
           </Banner>
         </Hero>
-        <RoomContainer />
+        <WithRoomConsumer />
       </>
     );
   }

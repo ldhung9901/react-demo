@@ -388,7 +388,7 @@ h6 {
 }
 .room-info {
   
-  
+  color: white;
   background:rgba(0, 0, 0, 0.7);
   text-transform: capitalize;
   padding: 0.5rem 0;

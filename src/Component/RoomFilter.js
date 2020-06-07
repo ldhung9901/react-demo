@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Roomcontext } from "../context";
 import Title from "./Title";
 const getUnique = (items, value) => {
+ 
   return [...new Set(items.map((item) => item[value]))];
 };
 export default function RoomFilter({ rooms }) {
@@ -28,9 +29,14 @@ export default function RoomFilter({ rooms }) {
       </option>
     );
   });
-  console.log(types);
-  let capacitys = getUnique(rooms, "capacity");
-  console.log(types);
+  let peoples = getUnique(rooms, "capacity");
+  peoples = peoples.map((item, index) => {
+    return (
+      <option key={index} value={item}>
+        {item}
+      </option>
+    );
+  });
   return (
     <section className="filter-container">
       <Title title="search rooms" />
@@ -47,7 +53,20 @@ export default function RoomFilter({ rooms }) {
           >
             {types}
           </select>
-        </div>
+          </div>
+          <div className="form-group">
+          <label htmlFor="capacity">Capacity</label>
+          <select
+            name="capacity"
+            id="capacity"
+            value={capacity}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {peoples}
+          </select>
+          </div>
+        
         {}
       </form>
     </section>
