@@ -1,25 +1,30 @@
 import React, { Component } from "react";
-import { Roomcontext } from "../context";
+
 import Loading from "./Loading";
 import Room from "./Room";
 import Title from "./Title";
-export default class FeatureRooms extends Component {
-  static contextType = Roomcontext;
-  render() {
-    let { loading, featuredRooms: rooms } = this.context;
+import { Row, Col, Container } from "reactstrap";
+import { useSelector } from "react-redux";
+export default function FeatureRooms() {
+  const state = useSelector((state) => state.filter);
+ console.log(state)
+
+  if (state !== null) {
+    let { loading, featuredRooms: rooms } = state;
     rooms = rooms.map((room) => {
-      return <Room key={room.id} room={room} />;
+      return (
+        <Col s="12" md="4" style={{ marginBottom: "3rem" }}>
+          <Room key={room.id} room={room} />
+        </Col>
+      );
     });
-    
     return (
-      <section className="featured-rooms">
-        <Title title="Featured Room"/>
-          <div className="featured-rooms-center">
-            {loading? <Loading />:rooms}
-          </div>
-       
-       
-      </section>
+      <Container>
+        <Title title="Featured Room" />
+        <Row>{loading ? <Loading /> : rooms}</Row>
+      </Container>
     );
   }
+else return <div></div>
+  
 }

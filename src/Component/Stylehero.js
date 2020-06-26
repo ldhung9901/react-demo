@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import defaultBcg from "../images/room-1.jpeg";
+
 const StyledHero = styled.header`
   min-height: 60vh;
-  background: url( ${props => props.img?props.img:defaultBcg }) center/cover no-repeat;
+  background-image:url(${(props)=>{
+     return props.img
+  }});
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "../Component/Hero";
 import Banner from "../Component/Banner";
 import { Link } from "react-router-dom";
@@ -6,7 +6,9 @@ import Service from "../Component/Service"
 import FeatureRooms from "../Component/FeatureRooms"
 
 
+
 export default function Home() {
+
   return (
       <>
     <Hero hero="defaultHero">

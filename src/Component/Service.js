@@ -1,29 +1,30 @@
 import React, { Component } from "react";
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 import Title from "./Title";
+import { Container, Row, Col } from "reactstrap";
 export default class Service extends Component {
   state = {
     services: [
       {
-        icon: <FaCocktail />,
+        icon: <FaCocktail style={{color: 'yellow'}} className="yellow" />,
         title: "free cocktails",
         info:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
-        icon: <FaHiking />,
+        icon: <FaHiking style={{color: 'yellow'}} className="yellow"/>,
         title: "free cocktails",
         info:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
-        icon: <FaShuttleVan />,
+        icon: <FaShuttleVan style={{color: 'yellow'}} className="yellow" />,
         title: "free cocktails",
         info:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
       {
-        icon: <FaBeer />,
+        icon: <FaBeer style={{color: 'yellow'}} className="yellow"/>,
         title: "free cocktails",
         info:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -32,18 +33,18 @@ export default class Service extends Component {
   };
   render() {
     return (
-      <section className="services">
+      <Container className="text-center">
         <Title title="Services"></Title>
-        <div className="services-center">
+        <Row>
           {this.state.services.map((item, index) => {
-            return <article key={index} className="service">
-                <span>{item.icon}</span>
-          <h6>{item.title}</h6>
-          <p>{item.info}</p>
-            </article>;
+            return <Col s="12" sm="6" md="3" key={index}>
+                <span >{item.icon}</span>
+          <h6 style={{color: 'white'}} className="margin">{item.title}</h6>
+          <p style={{color: 'white'}} >{item.info}</p>
+            </Col>;
           })}
-        </div>
-      </section>
+        </Row>
+      </Container>
     );
   }
 }

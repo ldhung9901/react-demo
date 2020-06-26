@@ -4,14 +4,23 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
-import { RoomProvider, RoomComsumer, Roomcontext } from "./context";
+
+import store from "./redux/Store";
+import {Provider} from "react-redux";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Data from "./data";
 ReactDOM.render(
   <React.StrictMode>
-    <RoomProvider>
-      <Router>
-        <App />
-      </Router>
-    </RoomProvider>
+    <Provider store={store}>
+      {" "}
+      <Data/>
+     
+        <Router>
+          
+          <App />
+        </Router>
+
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
