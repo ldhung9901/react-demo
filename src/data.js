@@ -5,7 +5,7 @@ import Client from "./Contentful";
 import { useDispatch } from "react-redux";
 
 import { getDataReducer1 } from "./redux/Reducer/Filter";
-import { getDataReducer2 } from "./redux/Reducer/HandleChange";
+
 export default function Data() {
   const dispatch = useDispatch();
   let newState = {
@@ -29,6 +29,12 @@ export default function Data() {
       order: "fields.price",
     });
     let rooms = formatData(res.items);
+    
+    rooms = rooms.map(room=>{
+      room.quantity =1
+      return room
+    })
+   
     let featuredRooms = rooms.filter((room) => room.featured === true);
     let maxPrice = Math.max(...rooms.map((item) => item.price));
     let minPrice = Math.min(...rooms.map((item) => item.price));
@@ -45,8 +51,9 @@ export default function Data() {
       minPrice,
       minSize,
       maxSize,
+      
     };
-    dispatch(getDataReducer2(hung));
+   
     dispatch(getDataReducer1(hung));
    
   };

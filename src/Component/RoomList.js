@@ -16,6 +16,7 @@ export default class RoomList extends Component {
         <div className="roomslist-center">
             {
                 rooms.map(item =>{
+                
                     return <Room key={item.id} room ={item}/>
                 })
             }
