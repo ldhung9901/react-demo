@@ -2,7 +2,6 @@ html {
   height: 100%;
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -446,6 +445,7 @@ a.link {
 .nav-link {
   font-size: 1.3rem;
   padding-right: 2rem!important;
+ 
 }
 
 svg {
@@ -502,19 +502,21 @@ label {
 
 .hover-gold:hover, svg:hover {
   color: gold;
+  cursor: pointer;
 }
 
-.Cart.unShow {
-  transition: var(--mainTransition);
+.unShow {
+
   display: none!important;
 }
+
 
 .Cart {
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
   height: 100vh;
-  width: 25vw!important;
+  width: 40vw!important;
   position: fixed!important;
   right: 0%;
   display: flex;
@@ -522,8 +524,8 @@ label {
   text-align: center;
   justify-items: center;
   justify-content: center;
-
-
+  animation: EErow ease-in 0.5s;
+  
 }
 
 .Cart .escape {
@@ -546,9 +548,8 @@ label {
   color: black;
   text-align: center;
 }
+
 .Cart .escape svg:hover {
-  
- 
   color: var(--primaryColor)!important;
 }
 
@@ -570,18 +571,157 @@ label {
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 700;
- 
 }
 
 .Cart .item:hover, .Cart .escape:hover {
   background: transparent!important;
   color: var(--primaryColor)!important;
 }
-@media  (max-width: 768px) {
-  .Cart
- {
-   width: 100vw!important;
- }}
- svg:hover {
-   cursor: pointer;
- }
+
+.special {
+  color: gold;
+}
+
+.special:hover {
+  color: mediumvioletred;
+  cursor: pointer;
+}
+
+.login {
+  height: 21rem;
+  width: 30vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+padding: 2rem;
+border: solid 3px gray;
+animation: EErow ease-in 0.3s;
+}
+
+.signUp {
+  height: 21rem;
+  width: 30vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+padding: 2rem;
+border: solid 3px gray;
+animation: EErow ease-in 0.3s;
+  ;
+}
+
+.login-closeBtn svg,.signUp-closeBtn svg {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.signUp-closeBtn svg,.signUp-closeBtn svg {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.signUp-closeBtn svg:hover {}
+.alert {
+  z-index: 3;
+  position: fixed!important;
+  right:0;
+  top: 20px;
+  width: 30vw;
+}
+.login-closeBtn svg:hover {}
+.alert {
+  z-index: 3;
+  position: fixed!important;
+  right:0;
+  top: 20px;
+  width: 30vw;
+}
+.btn.btn-outline-secondary.btn-sm {
+  line-height: 0px;
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+}
+.btn.btn-outline-secondary.btn-sm svg {
+  font-size: medium;
+  transform: translateX(-5px);
+  color: black;
+}
+.btn.btn-outline-secondary.btn-sm:hover{
+  color: white;
+  background-color: black;
+}
+@media (min-width:1048px){
+  .nav-cart {
+    display: none;
+  }
+}
+@media (max-width: 1048px) {
+  .nav-link {
+    width: 100vw;
+  }
+  .nav-cart-lg{
+ display: none;
+  }
+  
+  .Cart {
+    width: 100vw!important;
+  }
+  .login {
+    height: 50vh;
+  width: 100vw;
+  }
+  .signUp {
+    height: 50vh;
+  width: 100vw;
+  }
+}
+
+svg:hover {
+  cursor: pointer;
+}
+@media (max-height: 500px) {
+
+  .login {
+    height: 80vh;
+  width: 50vw;
+  }
+  .signUp {
+    height: 80vh;
+  width: 50vw;
+  }
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+@keyframes EErow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes EErow-reverse {
+  from {
+    display: flex;
+    
+  }
+  to {
+    display: none;
+   
+  }
+}

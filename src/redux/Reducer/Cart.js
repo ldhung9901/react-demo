@@ -4,7 +4,7 @@ const itemLocal = JSON.parse(localStorage.getItem("items"));
 
 const Cart = createSlice({
   name: "Cart",
-  initialState: { items: itemLocal ? itemLocal : [], showCart: true },
+  initialState: { items: itemLocal ? itemLocal : [], showCart: false },
 
   reducers: {
     addToCart: (state, action) => {
@@ -28,6 +28,7 @@ const Cart = createSlice({
           item.quantity += 1;
         }
       });
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
     decrease: (state, action) => {
       let itemDelete = null;
@@ -45,14 +46,17 @@ const Cart = createSlice({
    
    
       }
+      localStorage.setItem("items", JSON.stringify(state.items));
       return state;
     },
     getDataReducer2: (state, action) => {
       state = action.payload;
+      localStorage.setItem("items", JSON.stringify(state.items));
       return state;
     },
     toggleShowCart: (state, action) => {
       state.showCart = !state.showCart;
+      localStorage.setItem("items", JSON.stringify(state.items));
       return state;
     },
   },

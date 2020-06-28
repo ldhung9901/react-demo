@@ -4,11 +4,12 @@ import { MdAddShoppingCart } from "react-icons/md";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/Reducer/Cart";
+import { toggleMessage } from "../redux/Reducer/Message";
 
 export default function Room({ room }) {
   const { name, slug, images, price } = room;
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <article className="room">
       <div className="img-container">
@@ -23,7 +24,12 @@ export default function Room({ room }) {
       </div>
       <p className="room-info" style={{ position: "relative" }}>
         {name}{" "}
-        <a style={{ position: "absolute", right: "30px" }} onClick={()=>{dispatch(addToCart(room))}}>
+        <a
+          style={{ position: "absolute", right: "30px" }}
+          onClick={() => {
+            dispatch(addToCart(room));dispatch(toggleMessage(true));
+          }}
+        >
           <MdAddShoppingCart style={{ fontSize: "20px" }} />
         </a>{" "}
       </p>

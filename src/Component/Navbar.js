@@ -10,48 +10,56 @@ import {
   Navbar,
   NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
   Row,
   Col,
-  Container,
   Badge,
-  Button,
 } from "reactstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleShowCart, decrease, increase } from "../redux/Reducer/Cart";
+import Cart from "./Cart";
+import Login from "./Login";
+import SignUp from "./SignUp";
+import { toggleLogin } from "../redux/Reducer/Login";
+import { toggleSignUp } from "../redux/Reducer/SignUp";
 export default function NavbarDemo() {
   const [isOpen, setIsOpen] = useState(false);
+
   const dispatch = useDispatch();
   const toggle = () => setIsOpen(!isOpen);
-  const state = useSelector((state) => state.Cart);
- 
-  const { items, showCart } = state;
+  const stateCart = useSelector((state) => state.Cart);
+  const stateLogin = useSelector((state) => state.login);
+  const stateSignUp = useSelector((state) => state.signUp);
+
+  const { items } = stateCart;
   return (
     <>
-      <Navbar transparent dark expand="md">
+      <Navbar transparent dark expand="xl">
         <NavbarBrand>
           <Link to="/">
             <GiPalmTree></GiPalmTree>
           </Link>
         </NavbarBrand>
+        <div className='nav-cart'>
+          <FaShoppingCart
+            onClick={(e) => {
+              dispatch(toggleShowCart(e));
+            }}
+          />
+          <Badge color="secondary">{items.length}</Badge>
+        </div>
+
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Row className=" w-100" navbar>
-            <Col xs="12" sm="12" md="1" className="text-center">
+            <Col xs="12" sm="12" xl="1" className="text-center">
               <NavLink>
                 <Link className="link hover-gold" to="/">
                   Home
                 </Link>
               </NavLink>
             </Col>
-            <Col xs="12" sm="12" md="1" className="text-center">
+            <Col xs="12" sm="12" md="12" xl="1" className="text-center">
               <NavLink>
                 <Link className="link hover-gold" to="/rooms">
                   Rooms
@@ -61,8 +69,26 @@ export default function NavbarDemo() {
             <Col
               xs="12"
               sm="12"
-              md="10"
-              className="text-center text-md-right m-auto hover-gold "
+              xl="1"
+              className="text-center text-xl-right  hover-gold "
+            >
+              <NavLink onClick={() => dispatch(toggleLogin())}>Login</NavLink>
+            </Col>
+            <Col
+              xs="12"
+              sm="12"
+              xl="2"
+              className="text-center text-xl-left hover-gold special "
+            >
+              <NavLink onClick={() => dispatch(toggleSignUp())}>
+                Sign Up
+              </NavLink>
+            </Col>
+            <Col
+              xs="12"
+              sm="12"
+              xl="6"
+              className="text-center text-xl-right m-auto hover-gold nav-cart-lg"
               style={{ cursor: "pointer" }}
             >
               <FaShoppingCart
@@ -75,77 +101,12 @@ export default function NavbarDemo() {
           </Row>
         </Collapse>
       </Navbar>
-
-      <div className={showCart ? "Cart " : "Cart unShow"}>
-        <div style={{ margin: "0.1rem auto" }}>
-          {" "}
-          <div
-            onClick={(e) => {
-              dispatch(toggleShowCart(e));
-            }}
-            className="escape"
-          >
-            <FiX />
-          </div>
-        </div>
-
-        <div style={{overflowY:'scroll'}}>
-          {items.map((item, index) => {
-            return (
-              <Row key={index} style={{ margin: "2rem 0px" }}>
-                <Col xs="1" lg="1">
-                  {index + 1}
-                </Col>
-                <Col xs="2" lg="2">
-                  <img
-                    src={item.images[0]}
-                    style={{ height: "20px", width: "50px" }}
-                  />
-                </Col>
-                <Col
-                  xs="4"
-                  lg="4"
-                  className="text-lg-left"
-                  style={{ textTransform: "capitalize" }}
-                >
-                  {item.name}
-                </Col>
-                <Col xs="4" lg="4" className="text-lg-left">
-                  <Row>
-                    <Col> Qty: {item.quantity} </Col>
-                    <Col  xs="1">
-                      {" "}
-                      <Button
-                        outline
-                        size="sm"
-                        onClick={(e) => {
-                          dispatch(decrease(item));
-                        }}
-                      >
-                        -
-                      </Button>{" "}
-                    </Col>
-                    <Col xs="1">
-                      <Button
-                        outline
-                        size="sm"
-                        onClick={(e) => {
-                          dispatch(increase(item));
-                        }}
-                      >
-                        +
-                      </Button>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            );
-          })}
-        </div>
-
-        <a className="item" style={{ backgroundColor: "gold" }}>
-          Check Out
-        </a>
+      <Cart />
+      <div className={stateLogin.showLogin ? "login" : "unShow"}>
+        <Login />
+      </div>
+      <div className={stateSignUp.showSignUp ? "signUp" : "unShow"}>
+        <SignUp />
       </div>
     </>
   );
