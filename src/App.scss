@@ -1,0 +1,394 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  transition: all;
+ 
+}
+
+:root {
+  --primaryColor: orange;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: white;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* globals */
+
+html {
+ background-color: rgb(28, 28, 28);
+  background-repeat: no-repeat;
+  background-size: 5000px 5000px;
+}
+
+.carousel-item {
+  text-align: center;
+  width: 100vw;
+}
+
+.carousel-item img {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+body {
+  background: transparent!important;
+  font-family: 'Open Sans', sans-serif!important;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.error {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 8rem 0;
+  color: black;
+}
+
+/* end of globals */
+
+/* Navbar */
+
+/* end of navbar */
+
+/* Hero */
+
+/* End of Hero */
+
+/* Banner */
+
+.btn-primary {
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* End of Banner */
+
+/* Title */
+
+/* end of Title */
+
+/* services */
+
+/*end of services */
+
+/* featured rooms */
+
+/* end pf featured rooms */
+
+/* room */
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+  display: block;
+  transition: var(--mainTransition);
+}
+
+.price-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--mainWhite);
+  padding: 0.3rem 0.6rem 0.5rem;
+  border-bottom-right-radius: 1rem;
+  font-size: 0.5rem;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+
+.price-top p {
+  margin: 0;
+}
+
+.price-top h6 {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: var(--mainSpacing);
+}
+
+.img-container:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.img-container:hover img {
+  opacity: 0.3;
+}
+
+.img-container:hover .price-top {
+  opacity: 0;
+}
+
+/* end of room  */
+
+/* single room*/
+
+.single-room-images img {
+  width: 100%;
+  display: block;
+  box-shadow: 0px 0px 5px black;
+}
+
+.single-room-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 0;
+}
+
+.desc, .info {
+  margin: 1rem 0;
+}
+
+.desc h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.desc p {
+  line-height: 1.5;
+}
+
+.info h3, .info h6 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.info h6 {
+  font-weight: 300;
+}
+
+.room-extras {
+  width: 80vw;
+  margin: 0 auto 0rem auto;
+  padding: 0;
+}
+
+body {
+  background-blend-mode: lighten;
+}
+
+.room-extras h6 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.extras {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 992px) {
+  .single-room-images, .single-room-info, .room-extras {
+    width: 95vw;
+    max-width: 1170px;
+  }
+  .single-room-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+  .info {
+    padding-left: 3rem;
+  }
+}
+
+/* roomlist */
+
+/* end of roomlist */
+
+/*  rooms fitler*/
+
+.container {
+  margin-top: 5rem;
+}
+
+.App {
+  background-color: none;
+  height: 100%;
+  color: white;
+}
+
+
+
+.transparent {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+a.link {
+  color: white;
+}
+
+svg {
+  font-size: 2rem;
+  color: white;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.margin {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+}
+
+#price {
+  outline: none;
+  outline-style: none;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+.yellow svg {
+  color: yellow;
+}
+
+.img-thumbnail {
+  background-color: none;
+}
+
+
+.unShow {
+  display: none!important;
+}
+
+.special {
+  color: gold;
+}
+
+.special:hover {
+  color: mediumvioletred;
+  cursor: pointer;
+}
+
+.alert {
+  z-index: 5;
+  position: fixed!important;
+  right: 0;
+  top: 44px;
+  width: 30vw;
+  background-color:#0078f2!important;
+  color: whitesmoke!important;
+  border: none!important;
+}
+
+
+
+.btn.btn-outline-secondary.btn-sm {
+  line-height: 0px;
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+}
+
+.btn.btn-outline-secondary.btn-sm svg {
+  font-size: medium;
+  transform: translateX(-5px);
+  color: black;
+}
+
+.btn.btn-outline-secondary.btn-sm:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
+.active {
+  font-size: 2rem;
+  color: red;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+@keyframes EErow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes EErow-reverse {
+  from {
+    display: flex;
+  }
+  to {
+    display: none;
+  }
+}
+@media (max-width: 1048px) and ( max-height:2000px) {
+  .Cart {
+    width: 100vw!important;
+  }
+  .alert {
+    width: 70vw;
+  }
+}
+.form-control.form-control-select {
+  text-transform: capitalize!important;
+}

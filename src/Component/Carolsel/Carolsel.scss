@@ -1,0 +1,24 @@
+.btn-primary {
+    display: inline-block;
+    text-decoration: none!important;
+    letter-spacing: var(--mainSpacing);
+    color: black!important;
+    background: var(--primaryColor)!important;
+    padding: 0.4rem 0.9rem;
+    border: 3px solid var(--primaryColor)!important;
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    align-items: center;
+    padding-top: 0.5rem;
+   
+  }
+  .carousel-indicators{
+    z-index: 2!important;
+  }
+  
+  .btn-primary:hover {
+    background: transparent!important;
+    color: var(--primaryColor)!important;
+  }

@@ -1,0 +1,62 @@
+.Cart {
+  border-radius: 15px;
+  background-color:rgb(35, 35, 35);
+  z-index: 3;
+  height: 100vh;
+  width: 40vw ;
+  position: fixed !important;
+  right: 0%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  animation: EErow ease-in 0.5s;
+  .escape {
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    margin: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    background: var(--primaryColor) !important;
+    border: 2px solid var(--primaryColor) !important;
+    transition: var(--mainTransition);
+    font-size: 15px;
+    svg {
+      font-size: 20px;
+      color: black;
+      text-align: center;
+    }
+    svg:hover {
+      color: var(--primaryColor) !important;
+    }
+  }
+  .item {
+    z-index: 3;
+    margin-top: auto;
+    width: 100%;
+    padding: 0.5rem;
+    align-items: flex-end;
+    text-align: center;
+    align-content: center;
+    display: block;
+    text-decoration: none !important;
+    letter-spacing: var(--mainSpacing);
+    color: black !important;
+    background: var(--primaryColor) !important;
+    padding: 0.4rem 0.9rem;
+    border: 3px solid var(--primaryColor) !important;
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .item:hover,
+  .escape:hover {
+    background: transparent !important;
+    color: var(--primaryColor) !important;
+  }
+}

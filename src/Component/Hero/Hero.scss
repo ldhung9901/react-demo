@@ -1,0 +1,14 @@
+.defaultHero, .roomsHero {
+    min-height: calc(100vh - 66px)!important;
+    background: url("https://firebasestorage.googleapis.com/v0/b/resort-606d0.appspot.com/o/7433.jpg?alt=media&token=e914eb73-5863-40c2-8d4f-c96049dd2e2f") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .roomsHero {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/resort-606d0.appspot.com/o/31335.jpg?alt=media&token=e7187f3e-ace8-4856-a6eb-2cfa06b19ecf");
+    min-height: 60vh;
+  }
+  

@@ -1,20 +1,18 @@
-import React from "react";
-import Hero from "../Component/Hero";
-import Banner from "../Component/Banner";
-import { Link } from "react-router-dom";
-import Service from "../Component/Service"
-import FeatureRooms from "../Component/FeatureRooms"
+import React, { useState } from "react";
+import Hero from "../Component/Hero/Hero";
+
+import Service from "../Component/Service/Service"
+import FeatureRooms from "../Component/FeatureRooms/FeatureRooms"
+import CarouselCP from "../Component/Carolsel/Carolsel";
+
 
 
 export default function Home() {
+
   return (
       <>
-    <Hero hero="defaultHero">
-      <Banner
-        title="luxurious rooms"
-        subtitle="deluxe Rooms starting at $299"
-      ><Link to="/rooms" className="btn-primary">our rooms</Link></Banner>
-    </Hero>
+    
+    <CarouselCP></CarouselCP>
     <Service></Service>
     <FeatureRooms></FeatureRooms>
   
